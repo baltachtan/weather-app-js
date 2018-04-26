@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import '../node_modules/bootswatch/dist/sketchy/bootstrap.css'
+
+
 
 
 
 
 const PLACES = [
-  { name: "Palo Alto", zip: "94303"},
-  { name: "Pittsburgh", zip: "15106"},
-  { name: "Chicago", zip: "60607"},
-  { name: "Honolulu", zip: "96803"},
-  { name: "Los Angeles", zip: "56438"}
+  { name: "Palo Alto"},
+  { name: "Pittsburgh"},
+  { name: "Chicago"},
+  { name: "Honolulu"},
+  { name: "Los Angeles"},
+  { name: "Anchorage"},
+  { name: "Miami"}
+
 ];
+
 
 class App extends Component {
   constructor () {
@@ -63,23 +70,23 @@ class WeatherDisplay extends Component {
   }
   render() {
     const weatherData = this.state.weatherData;
-    if (!weatherData) return <div>Loading</div>
+    if (!weatherData) return <div>Loading</div>;
     const weather = weatherData.weather[0];
-    const iconURL = "http://openweathermap.org/img/w/" + weather.icon + ".png";
+    const iconUrl = "http://openweathermap.org/img/w/" + weather.icon + ".png";
     return (
       <div>
         <h1>
           {weather.main} in {weatherData.name}
-          <img src={iconURL} alt = {weatherData.description} />
+          <img src={iconUrl} alt={weatherData.description} />
         </h1>
-        <p>Current: {weatherData.main.temp}°F</p>
-        <p>High: {weatherData.main.temp_max}°F</p>
-        <p>Low: {weatherData.main.temp_min}°F</p>
+        <p>Current: {weatherData.main.temp}°</p>
+        <p>High: {weatherData.main.temp_max}°</p>
+        <p>Low: {weatherData.main.temp_min}°</p>
         <p>Wind Speed: {weatherData.wind.speed} mi/hr</p>
       </div>
-    )
-    return <div>{JSON.stringify}</div>
+    );
   }
+
 }
 
 export default App;
