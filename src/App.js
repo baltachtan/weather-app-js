@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import "bootstrap/dist/css/bootstrap.css";
-import { Navbar, NavItem, Nav, Grid, Row, Col } from "react-bootstrap";
+
+
 
 
 const PLACES = [
   { name: "Palo Alto", zip: "94303"},
   { name: "Pittsburgh", zip: "15106"},
   { name: "Chicago", zip: "60607"},
-  { name: "Honolulu", zip: "96803"}
+  { name: "Honolulu", zip: "96803"},
+  { name: "Los Angeles", zip: "56438"}
 ];
 
 class App extends Component {
